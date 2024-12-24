@@ -1,0 +1,88 @@
+Fichier explicatif du projet "Born 2 be root"
+
+Verifier l'etat de ssh et UFW avec : 
+-> systemctl status ssh
+-> systemctl status ufw
+-> systemctl 
+
+
+
+LINUX / DEBIAN
+ROCKY -> Plus pour les professionnelles et societe
+DEBIAN -> Plus acces pour les utilisateurs, car plus accessible
+
+Difference Apt et Aptitude:
+Apt -> New version de apt-get // Precision des paquets installee
+Aptitude -> Version graphique de "apt" avec interface utilisateur
+
+SELinux -> 
+AppArmor -> Logiciel de securite pour Linux, Association de chaques programme a un profil utilisateur.
+=> AppArmor est implementer au noyaux de Linux, et est plus efficace que SELinux, qui est implemente en tant que module de noyau chargeable
+
+
+Connection SSH depuis un autre terminal, seulement en utilisateur ou sudo mais pas d'accessibilite en ROOT
+=> A verifier
+
+UFW -> Plus simple d'utilisation. Pour Debian 
+=> Verifier UFW (actif au lancement de la machine)
+-> systemctl status ufw
+-> ufw allow port-id (Ajouter un port)
+-> ufw delete rule number (Supprimer le port a la ligne)
+
+Firewall -> Pour Rocky 
+
+Modification de l'hostname : 
+
+Politique de mot de passe :
+ou ? quoi ? pourquoi ? 
+
+Politique du mot de passe root:
+
+
+Connection ssh depuis terminal: 
+-> ssh <utilisateur>@127.0.0.1 -p <port>
+
+SUDO : 
+ou ? quoi ? pourquoi ?
+
+seruff42 -> machine
+seruff -> utilisateur
+root -> root
+
+seruff -> appartenance aux group "user42" et "sudo"
+=> A verifier
+
+Creer un nouvel utilisateur et lui assigner un groupe: 
+Commande pour y arriver -> 
+Commande pour creer un groupe -> sudo groupadd <nom du groupe>
+Commande pour ajouter un utilisateur -> sudo useradd <nom de l'utilisateur>
+Commande pour associer un utilisateur existant a un groupe -> sudo usermod -aG <nom du groupe> <nom de l'utilisateur>
+Afficher tout les groupes du systeme -> getent group OU cat /etc/group
+
+
+Changement du mot de passe utilisateur et root
+->
+
+Authentification avec sudo limite a 3 essais en cas de mot de passe faux => Sinon affichage d'un message personnalise
+=> A verifier 
+-> Politique de mot de passe dans : sudo visudo
+-> passwd_tries=3 => 3 essaie maximum de mot de passe
+-> badpass_message = " Le message lorsque 3 erreur de mot de passes ont ete realise"
+-> Erreur du mot de passe = envoi d'un mail => mail_badpass (mail non configurer car BONUS)
+
+Archivage des commandes sudo (input et output) dans /var/log/sudo
+sudo visudo
+=> logfile = "/var/log/sudo/sudo.log" fichier pour l'input et l'output des commandes
+Mode TTY ???
+
+Restrictions des paths utilisables par sudo.
+sudo visudo -> secure_path=""
+
+Modification d'affichage du script monitoring.sh avec
+-> crontab -u root -e
+-> Remplacer 10 par 1 (pour les minutes)
+
+PASSWD Modif: 
+-> cat /etc/login.defs
+
+/usr/bin/vim paw_pwdquality 
