@@ -99,12 +99,6 @@ Modification d'affichage du script monitoring.sh avec
 PASSWD Modif: 
 -> cat /etc/login.defs
 
-/usr/bin/vim paw_pwdquality 
+sudo /usr/local/bin/monitoring.sh => To execute as sudo scipt of the ARCHITECTURE
 
 
-
-Disk Load : #!/bin/bash
-fdisk=$(df -BG --total | grep 'total' | awk '{print $2}' | sed 's/G//')
-udisk=$(df -BM --total | grep 'total' | awk '{print $3}' | sed 's/M//')
-pdisk=$(df -BM --total | grep 'total' | awk '{printf("%d", $3/$2*100)}')
-echo "#Disk Usage: ${udisk}/${fdisk}Gb (${pdisk}%)"
