@@ -72,6 +72,7 @@ Commande pour ajouter un utilisateur -> sudo useradd <nom de l'utilisateur>
 Commande pour associer un utilisateur existant a un groupe -> sudo usermod -aG <nom du groupe> <nom de l'utilisateur>
 Afficher tout les groupes du systeme -> getent group OU cat /etc/group
 Afficher tout les utilisation du sys -> cut -d: -f1 /etc/passwd
+Remove utilisateurs -> cd /etc && vim passwd
 
 Changement du mot de passe utilisateur et root
 ->
