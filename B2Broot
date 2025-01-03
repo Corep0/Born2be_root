@@ -1,5 +1,11 @@
 Fichier explicatif du projet "Born 2 be root"
 
+Hostname : seruff42
+MDP : mDpasse!42
+new user : seruff
+encrypted passphrase : encrypted_passphrase42!
+
+
 Verifier l'etat de ssh et UFW avec : 
 -> systemctl status ssh
 -> systemctl status ufw
