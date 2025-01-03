@@ -10,8 +10,14 @@ Verifier l'etat de ssh et UFW avec :
 -> systemctl status ssh
 -> systemctl status ufw
 -> systemctl 
+SSH :
   sudo grep Port /etc/ssh/sshd_config check if the port settings
 Passage du port 4242 par 4243
+UFW :
+  sudo ufw enable -> start it
+  sudo ufw status numbered -> Activated or not
+  sudo ufw allow 4242 -> Give access to the port 4242
+  sudo ufw status numbered -> Show active ports
 
 
 LINUX / DEBIAN
