@@ -10,7 +10,7 @@ Verifier l'etat de ssh et UFW avec :
 -> systemctl status ssh
 -> systemctl status ufw
 -> systemctl 
-
+  sudo grep Port /etc/ssh/sshd_config check if the port settings
 Passage du port 4242 par 4243
 
 
