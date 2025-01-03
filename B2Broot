@@ -46,10 +46,7 @@ Firewall -> Pour Rocky
 
 Modification de l'hostname : 
 
-Politique de mot de passe :
-ou ? quoi ? pourquoi ? 
-
-Politique du mot de passe root:
+Politique du mot de passe / mdp root:
 password  requisite     pam_pwquality.so  retry=3 /3 essais/ 
 minlen=10 /10cara minimum/ ucredit=-1 lcredit=-1 dcredit=-1 /min 1 Majuscule min 1 caractere special min 1 chiffre
 maxrepeat=3 /3cara identique consecutif / reject_username /mdp != username/ 
@@ -62,7 +59,7 @@ SUDO :
 ou ? quoi ? pourquoi ?
 
 seruff42 -> machine
-seruff -> utilisateur
+seruff -> utilisateur sudo
 root -> root
 
 seruff -> appartenance aux group "user42" et "sudo"
@@ -74,7 +71,7 @@ Commande pour creer un groupe -> sudo groupadd <nom du groupe>
 Commande pour ajouter un utilisateur -> sudo useradd <nom de l'utilisateur>
 Commande pour associer un utilisateur existant a un groupe -> sudo usermod -aG <nom du groupe> <nom de l'utilisateur>
 Afficher tout les groupes du systeme -> getent group OU cat /etc/group
-
+Afficher tout les utilisation du sys -> cut -d: -f1 /etc/passwd
 
 Changement du mot de passe utilisateur et root
 ->
