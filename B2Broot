@@ -5,6 +5,7 @@ Verifier l'etat de ssh et UFW avec :
 -> systemctl status ufw
 -> systemctl 
 
+Passage du port 4242 par 4243
 
 
 LINUX / DEBIAN
