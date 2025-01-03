@@ -1,3 +1,1 @@
---iprt-iso-maker-file-marker-bourne-sh a501ddb4-e0b4-4609-84d0-5c66917e146c
---volume-id=seruff42
-/seruff42.vdi=/mnt/nfs/homes/seruff/sgoinfre/seruff42/seruff42/seruff42.vdi
+
