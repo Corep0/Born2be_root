@@ -101,4 +101,4 @@ PASSWD Modif:
 
 sudo /usr/local/bin/monitoring.sh => To execute as sudo scipt of the ARCHITECTURE
 
-
+lsblk -> Affichage de la structure des partitions de la VM 
