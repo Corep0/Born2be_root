@@ -1,0 +1,112 @@
+ Signature.txt → Check difference with .vdi file in /home / seruff / sgoinfre / Born2beroot / seruff42
+
+Snapshot already builded / Snapshot == Copy of the VM state
+Click start on VM 
+
+Basic of VM : X
+
+Choice of operating system : Debian instead of Rocky 
+→
+	ROCKY -> Plus pour les professionnelles et societe
+	DEBIAN -> Plus acces pour les utilisateurs, car plus accessible
+
+Differences between Centos and Debian : 
+→ Centos → MaJ ont une duree de vie de 10 ans, mais n’assure pas que le systeme finissent en lambo en cas d’un probleme qui doit etre corrige. De plus, le support de cette exploitation, ce fait pas une societe. Tant dis que Debian est principalement allimente et soutenu par une solide communaute !
+→ Debian → More stable, support more upgrading, MaJ tout les deux ans et communaute forte. 
+
+Interest of Virtual Machine : Pouvoir animer et controler son systeme, de peux importe ou l’on se trouve. De plus, il est possible de creer un terminal comme bon nous semble. Suivant les envies et les besoins de l’utilisateurs. 
+
+Choose of Debian : Explication des differences entre “aptitude”, “apt” et “APPArmor” 
+→Apt → Nouvelle version de apt-get (anciennement) => Precision de l’installation des paquets (plus en detail)
+→ Aptitude → Version graphique de “apt” avec interface utilisateur (mois precise que “apt” mais plus lisible.
+
+→AppArmor → Logiciel de securite pour Linux, par l’association de chque programme a un profil utilisateur, Implementation au noyeux de Linux. Plus adapte aux serveurs de societe qu’au petit utilisateur.
+→ UFW anciennement FireWall, des commandes simples et plus accessibles pour les debutants. 
+
+Script de l’architecture du system, fichier (monitoring.sh)
+sudo /usr/local/bin/monitoring.sh 
+=> To execute as sudo scipt of the ARCHITECTURE
+
+Encrypted passphrase : encrypted_passphrase42!
+User : seruff
+Mot de passe : mDpasse!42
+Commandes => 
+UFW :
+ 	systemctl status ufw → Check state ufw
+	sudo ufw enable -> start it
+	ufw delete 4242 → Retirer regle d’acces au port 4242
+	sudo ufw allow 4242 -> Ajouter regle d’acces au port 4242
+	sudo ufw status numbered -> Show active ports
+SSH :
+	systemctl status ssh → Check state ssh
+	sudo grep Port /etc /ssh /sshd_config → Acces port setting 
+Host IP : Ip allowed to get connected to VM (PC user) port 4242 (line of access) Guest IP : Ip of the virtual Machine
+HostIP : hostname -I (on ITerm)
+Guest IP: ip a(on VM)
+
+Version Debian → cat / etc / os-release
+
+
+sudo systemctl stop cron  //temp
+		disable cron //perm
+
+USER	:	GROUP
+seruff42 -> machine
+seruff -> utilisateur sudo
+root -> root
+Creer un nouvel utilisateur et lui assigner un groupe: 
+getent group sudo | getent group user42 → check user in those groups
+Commande pour y arriver => 
+
+	Commande pour creer un groupe 
+		-> sudo groupadd <nom du groupe>
+	Commande pour ajouter un utilisateur 
+		-> sudo useradd <nom de l'utilisateur>
+	Commande pour associer un utilisateur existant a un groupe 
+		-> sudo usermod -aG <nom du groupe> <nom de l'utilisateur>
+	Afficher tout les groupes du systeme 
+		-> getent group OU cat /etc/group
+	Afficher tout les utilisation du sys -
+		> cut -d: -f1 /etc/passwd
+	Remove utilisateurs 
+		-> cd /etc && vim passwd
+sudo groupadd evaluating
+sudo groupdel evaluating
+sudo useradd <username>
+sudo usermod -aG evaluating username
+
+sudo vim /etc/pam.d/common-password
+Authentification avec sudo limite a 3 essais en cas de mot de passe faux => Sinon affichage d'un message personnalise
+=> A verifier 
+-> Politique de mot de passe dans : sudo visudo
+-> passwd_tries=3 => 3 essaie maximum de mot de passe
+-> badpass_message = " Le message lorsque 3 erreur de mot de passes ont ete realise"
+-> Erreur du mot de passe = envoi d'un mail => mail_badpass (mail non configurer car BONUS)
+PASSWD Modif: 
+-> cat /etc/login.defs
+
+Hostname : seruff42 ? 
+Print info hostname → hostnamectl
+Modify hostname →hostnamectl hostname <new_name>
+then reboot machine → sudo reboot
+
+To check for partition → lsblk
+=> No bonus
+
+SUDO :
+Assign user to sudo → usermod -aG sudo username
+sudo whoami → (if user got sudo privilege, output will be “root” otherwise “user is not in the sudoers file”)
+
+
+
+SCRIPT MONITORING
+
+Execute script → /usr /local /bin / monitoring.sh or sudo 
+execute script every minute (* one) 
+* * * * * /usr /local /bin / monitoring.sh
+crontab -e 
+* * * * * /usr / local /bin /monitoring.sh; sleep 30; * * * * * /usr /local /bin /monitoring.sh
+
+=> Verification cle ssh, lien des ports 127 ou 192 V correct
+=> Mot de passe d’utilisateur
+=> 
