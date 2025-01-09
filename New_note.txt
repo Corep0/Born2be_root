@@ -110,3 +110,9 @@ crontab -e
 => Verification cle ssh, lien des ports 127 ou 192 V correct
 => Mot de passe d’utilisateur
 => 
+
+A RAJOUTER :
+sudo useradd -m <user_name>
+sudo passwd <user_name>
+	=> Mise en place, d'un mot de passe apres la creation d'un utilisateur.
+Forcer le changement de mot de passe à la première connexion en utilisant la commande chage -d 0 <user_name>.
