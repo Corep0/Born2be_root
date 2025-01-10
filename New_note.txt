@@ -84,6 +84,7 @@ Authentification avec sudo limite a 3 essais en cas de mot de passe faux => Sino
 -> Erreur du mot de passe = envoi d'un mail => mail_badpass (mail non configurer car BONUS)
 PASSWD Modif: 
 -> cat /etc/login.defs
+sudo nano /etc/pam.d/common-password
 
 Hostname : seruff42 ? 
 Print info hostname → hostnamectl
