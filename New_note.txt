@@ -29,7 +29,7 @@ sudo /usr/local/bin/monitoring.sh
 
 Encrypted passphrase : encrypted_passphrase42!
 User : seruff
-Mot de passe : mDpasse!42
+Mot de passe : rouky23S64!
 Commandes => 
 UFW :
  	systemctl status ufw → Check state ufw
